@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/displaymath/db" VERSION="20140326" COMMENT="XMLDB file for Moodle blocks/displaymath holds information about preferred mathematics display option."
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_displaymath" COMMENT="Default comment for block_displaymath. This holds the data for preferred type of display.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="displaytype" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="This is a number representing the way mathematics should be output."/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

@@ -1,0 +1,10 @@
+{
+  "name": "moodle-block_displaymath-mathjax",
+  "builds": {
+    "moodle-block_displaymath-mathjax": {
+      "jsfiles": [
+        "mathjax.js"
+      ]
+    }
+  }
+}
