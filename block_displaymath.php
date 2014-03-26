@@ -25,7 +25,7 @@
 
 //require_once('../../config.php');
 require_once("mathform.php");
-//global $DB;
+global $DB;
 
 //$courseid = optional_param('courseid', PARAM_INT);
 
@@ -51,8 +51,9 @@ public function get_content() {
         $this->displaytype=$fromform->displaytype;
         unset($fromform->submitbutton);
         //print_object($fromform);
+        //$DB->insert_record('block_displaymath', $fromform);
         //if (!$DB->insert_record('block_displaymath', $fromform)) {
-         // print_error('inserterror', 'block_displaymath');
+          //print_error('inserterror', 'block_displaymath');
         //}
       }
       else {$this->displaytype=0;}
@@ -66,13 +67,13 @@ public function get_content() {
   }
  function get_required_javascript() {
     global $PAGE;
-    if($this->displaytype==8){
+    if($this->displaytype==10){
       $PAGE->requires->yui_module('moodle-block_displaymath-mathjax', 'M.block_displaymath.showSource');
       return;
     }
-    if($this->displaytype/2!=3){
+    if($this->displaytype/2!=4){
       $PAGE->requires->yui_module('moodle-block_displaymath-mathjax', 'M.block_displaymath.init'
-                            ,array(array('imagetype'=>$this->displaytype))
+                            ,array(array('displaytype'=>$this->displaytype))
                             );
     }
     if(get_config('block_displaymath')->mathjaxurl) {

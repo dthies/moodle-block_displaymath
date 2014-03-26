@@ -39,8 +39,9 @@ M.block_displaymath.init = function(params){
         }
     });
     MathJax.Hub.Configured();
-    if(params.dislpaytype/2===1){MathJax.Hub.setRenderer('MML');}
-    if(params.dislpaytype/2===2){MathJax.Hub.setRenderer('SVG');}
+    if(params.displaytype/2===1){MathJax.Hub.setRenderer('HTML-CSS');}
+    if(params.displaytype/2===2){MathJax.Hub.setRenderer('NativeMML');}
+    if(params.displaytype/2===3){MathJax.Hub.setRenderer('SVG');}
 
     MathJax.Hub.Queue( function(){
         Y.all('.texrender').each(function(i){

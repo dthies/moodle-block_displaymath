@@ -36,11 +36,12 @@ class displayoption_form extends moodleform {
         $mform->addElement('html', 'Choose Mathemathics Display Method');
 
         $mform->addElement('select', 'displaytype', '', array(
-            '0'=>'HTML5',
-//            '2'=>'MathML',
-//            '4'=>'SVG',
-            '6'=>'PNG',
-            '8'=>'TeX Source',
+            0=>'Default',
+            2=>'HTML5',
+            4=>'MathML',
+            6=>'SVG',
+            8=>'PNG',
+            10=>'TeX Source',
         ) );
         $this->add_action_buttons($cancel = false);
    
