@@ -50,6 +50,7 @@ public function get_content() {
       $context=$this->page->context;
       $filters = filter_get_active_in_context($context);
       if (!array_key_exists('tex', $filters)) {
+        $this->displaytype=10;
         $this->content->text='';
         return $this->content;
       }
@@ -73,7 +74,6 @@ public function get_content() {
       else {$this->displaytype=0;}
     }
 
-      //$this->content->text = $this->displaytype . $mform->render();
       $this->content->text = $mform->render();
  
     return $this->content;
