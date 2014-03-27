@@ -40,8 +40,22 @@ public function get_content() {
     if ($this->content !== null) {
       return $this->content;
     }
- 
+
+
     $this->content  =  new stdClass;
+    $this->content->footer='';
+
+    if (get_config('block_displaymath')->requiretex) {
+      // If TeX filter is disabled, do not add button.
+      $context=$this->page->context;
+      $filters = filter_get_active_in_context($context);
+      if (!array_key_exists('tex', $filters)) {
+        $this->content->text='';
+        return $this->content;
+      }
+    }
+
+
     $mform = new displayoption_form(new moodle_url($this->page->url,array('courseid' => $COURSE->id)));
     //$mform = new displayoption_form(new moodle_url($this->page->url));
 //Form processing and displaying is done here
@@ -61,7 +75,6 @@ public function get_content() {
 
       //$this->content->text = $this->displaytype . $mform->render();
       $this->content->text = $mform->render();
-      $this->content->footer = '';
  
     return $this->content;
   }
