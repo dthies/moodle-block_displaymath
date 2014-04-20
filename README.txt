@@ -4,8 +4,8 @@ moodle-block_displaymath
 This is a block that configures MathJax so that it plays nice with
 TeX filter.
 
-Place this directory in the Moodle installation /blocks folder which is
-named displaymath. Visit adminpage to install to database. Set MathJax
+Place this directory in the Moodle installation /blocks folder with the
+name displaymath. Visit admin page to install to database. Set MathJax
 url in the settings either to cdn or local install of MathJax.js.  Add
 block to course page and enable TeX filter.
 
